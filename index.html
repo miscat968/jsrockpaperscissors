@@ -9,9 +9,21 @@
             const choice = ['rock', 'paper', 'scissors']
             function getComputerChoice() {
                 let computerSelection = choice[Math.floor(Math.random()*choice.length)
+                return computerSelection
             }
-
-            getComputerChoice()
+            
+            function playRound(playerSelection, computerSelection) {
+                let playerChoice = prompt('pick your choice').toLowerCase
+                if (playerChoice === 'rock' && computerSelection === 'scissors' || playerChoice === 'scissors' && computerSelection === 'paper' || playerChoice === 'paper' && computerSelection === 'rock'){
+                    return 'you win!'
+                }
+                else if (playerChoice === computerSelection){
+                    return 'draw'
+                }
+                else {
+                    return 'you lose'
+                }
+            }
 
 
 
