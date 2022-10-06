@@ -7,24 +7,36 @@
     <body>
         <script>
             const choice = ['rock', 'paper', 'scissors']
-            function getComputerChoice() {
-                let computerSelection = choice[Math.floor(Math.random()*choice.length)
-                return computerSelection
-            }
             
-            function playRound(playerSelection, computerSelection) {
-                let playerChoice = prompt('pick your choice').toLowerCase
-                if (playerChoice === 'rock' && computerSelection === 'scissors' || playerChoice === 'scissors' && computerSelection === 'paper' || playerChoice === 'paper' && computerSelection === 'rock'){
-                    return 'you win!'
-                }
-                else if (playerChoice === computerSelection){
-                    return 'draw'
-                }
-                else {
-                    return 'you lose'
-                }
+            
+            let playerChoice;
+            let computerSelection;
+            let computerScore = 0;
+            let playerScore = 0;
+
+            function getComputerChoice() {
+               return choice[Math.floor(Math.random()*choice.length)]
             }
 
+            function playRound(playerChoice, computerSelection) {
+                computerSelection = getComputerChoice();
+                playerChoice = prompt('choose your weapon')
+                if ((playerChoice === 'rock' && computerSelection === 'scissors') || (playerChoice === 'scissors' && computerSelection === 'paper' ) || (playerChoice === 'paper' && computerSelection === 'rock')){
+                    console.log('you win')
+                }
+                else if (playerChoice === computerSelection){
+                    console.log('draw')
+                }
+                else {
+                    console.log('you lose')
+                }
+                }
+            
+            function game() {
+                for (i = 0; i > 5; i++)
+                playRound(playerChoice, computerSelection)
+
+            }
 
 
 
