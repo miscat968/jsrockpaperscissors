@@ -21,26 +21,30 @@
             function playRound(playerChoice, computerSelection) {
                 computerSelection = getComputerChoice();
                 playerChoice = prompt('choose your weapon')
-                if ((playerChoice === 'rock' && computerSelection === 'scissors') || (playerChoice === 'scissors' && computerSelection === 'paper' ) || (playerChoice === 'paper' && computerSelection === 'rock')){
-                    console.log('you win')
+                if ((playerChoice == 'rock' && computerSelection == 'scissors') || (playerChoice == 'scissors' && computerSelection == 'paper' ) || (playerChoice == 'paper' && computerSelection == 'rock')){
+                    playerScore = ++playerScore  
+                    console.log('you win', playerScore, computerScore)
                 }
                 else if (playerChoice === computerSelection){
-                    console.log('draw')
+                    console.log('draw', playerScore, computerScore)
                 }
                 else {
-                    console.log('you lose')
+                    computerScore = ++computerScore
+                    console.log('you lose', playerScore, computerScore)
+                    
                 }
                 }
             
             function game() {
-                for (i = 0; i > 5; i++)
-                playRound(playerChoice, computerSelection)
-
+                for (let i = 0; i > 5; i++){
+                    playRound(playerChoice,computerSelection)   
+                }
             }
+            
+            game()
 
 
 
         </script>
     </body>
 </html>
-
