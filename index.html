@@ -6,6 +6,20 @@
     </head>
     <body>
         <script>
+            // Creating buttons for DOM Manipulation
+
+            let rockButton = document.createElement('button')
+            rockButton.addEventListener('click', playRound)
+
+            let paperButton = document.createElement('button')
+            paperButton.addEventListener('click', playRound)
+
+
+            let scissorsButton = document.createElement('button')
+            scissorsButton.addEventListener('click', playRound)
+
+
+
             const choice = ['rock', 'paper', 'scissors']
             
             
@@ -35,12 +49,12 @@
                 }
                 }
             
-            function game() {
-                for (let i = 0; i < 5; i++) {
-                    playRound(playerChoice,computerSelection)  
+            // function game() {
+            //     for (let i = 0; i < 5; i++) {
+            //         playRound(playerChoice,computerSelection)  
                     
-                }
-            }
+            //     }
+            // }
             
             game()
 
