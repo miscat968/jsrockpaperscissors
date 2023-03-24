@@ -5,6 +5,9 @@
         <meta name="content" display="device-width, intial-scale=1.0">
     </head>
     <body>
+
+
+
         <script>
             // Creating buttons for DOM Manipulation
 
@@ -17,6 +20,11 @@
 
             let scissorsButton = document.createElement('button')
             scissorsButton.addEventListener('click', playRound)
+
+            // Creating a div element to display results
+
+            const results = document.createElement('div')
+
 
 
 
@@ -37,14 +45,14 @@
                 playerChoice = prompt('choose your weapon')
                 if ((playerChoice == 'rock' && computerSelection == 'scissors') || (playerChoice == 'scissors' && computerSelection == 'paper' ) || (playerChoice == 'paper' && computerSelection == 'rock')){
                     playerScore = ++playerScore  
-                    console.log('you win', playerScore, computerScore)
+                    results.textContent('you win', playerScore, computerScore)
                 }
                 else if (playerChoice === computerSelection){
-                    console.log('draw', playerScore, computerScore)
+                    results.textContent('draw', playerScore, computerScore)
                 }
                 else {
                     computerScore = ++computerScore
-                    console.log('you lose', playerScore, computerScore)
+                     results.textContent('you lose', playerScore, computerScore)
                     
                 }
                 }
